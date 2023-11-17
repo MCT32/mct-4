@@ -43,10 +43,10 @@ code = [
     CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110 nc  z
     CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110  c nz
     CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110  c  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111 nc nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111 nc  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111  c nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111  c  z
+    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111 nc nz OUT
+    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111 nc  z
+    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111  c nz
+    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111  c  z
     CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1000 nc nz
     CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1000 nc  z
     CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1000  c nz
