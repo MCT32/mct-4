@@ -31,18 +31,18 @@ code = [
     CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011 nc  z
     CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011  c nz
     CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011  c  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100 nc nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100 nc  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100  c nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100  c  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0101 nc nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0101 nc  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0101  c nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0101  c  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0110 nc nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0110 nc  z
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0110  c nz
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0110  c  z
+    CO|MI,  RO|II|CE,   AO|BI,  0,      0,      0, 0, 0, # 0100 nc nz TAB
+    CO|MI,  RO|II|CE,   AO|BI,  0,      0,      0, 0, 0, # 0100 nc  z
+    CO|MI,  RO|II|CE,   AO|BI,  0,      0,      0, 0, 0, # 0100  c nz
+    CO|MI,  RO|II|CE,   AO|BI,  0,      0,      0, 0, 0, # 0100  c  z
+    CO|MI,  RO|II|CE,   SO|AI,  0,      0,      0, 0, 0, # 0101 nc nz ADD
+    CO|MI,  RO|II|CE,   SO|AI,  0,      0,      0, 0, 0, # 0101 nc  z
+    CO|MI,  RO|II|CE,   SO|AI,  0,      0,      0, 0, 0, # 0101  c nz
+    CO|MI,  RO|II|CE,   SO|AI,  0,      0,      0, 0, 0, # 0101  c  z
+    CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110 nc nz SUB
+    CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110 nc  z
+    CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110  c nz
+    CO|MI,  RO|II|CE,   SO|AI|AS, 0,    0,      0, 0, 0, # 0110  c  z
     CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111 nc nz
     CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111 nc  z
     CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0111  c nz
