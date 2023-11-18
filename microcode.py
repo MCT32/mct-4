@@ -13,68 +13,69 @@ BI =  0b0000100000000000
 SO =  0b0001000000000000
 AS =  0b0010000000000000
 OI =  0b0100000000000000
+SR =  0b1000000000000000
 
 code = [
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0000 nz nc NOP
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0000 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0000  z nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0000  z  c
-    CO|MI,  RO|II|CE,   IO|AI,  0,      0,      0, 0, 0, # 0001 nz nc LDI
-    CO|MI,  RO|II|CE,   IO|AI,  0,      0,      0, 0, 0, # 0001 nz  c
-    CO|MI,  RO|II|CE,   IO|AI,  0,      0,      0, 0, 0, # 0001  z nc
-    CO|MI,  RO|II|CE,   IO|AI,  0,      0,      0, 0, 0, # 0001  z  c
-    CO|MI,  RO|II|CE,   IO|MI,  RO|AI,  0,      0, 0, 0, # 0010 nz nc LDA
-    CO|MI,  RO|II|CE,   IO|MI,  RO|AI,  0,      0, 0, 0, # 0010 nz  c
-    CO|MI,  RO|II|CE,   IO|MI,  RO|AI,  0,      0, 0, 0, # 0010  z nc
-    CO|MI,  RO|II|CE,   IO|MI,  RO|AI,  0,      0, 0, 0, # 0010  z  c
-    CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011 nz nc STA
-    CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011 nz  c
-    CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011  z nc
-    CO|MI,  RO|II|CE,   IO|MI,  AO|RI,  0,      0, 0, 0, # 0011  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100 nz nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100  z nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 0100  z  c
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI,  0, 0, 0, # 0101 nz nc ADD
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI,  0, 0, 0, # 0101 nz  c
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI,  0, 0, 0, # 0101  z nc
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI,  0, 0, 0, # 0101  z  c
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS,0, 0, 0, # 0110 nz nc SUB
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS,0, 0, 0, # 0110 nz  c
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS,0, 0, 0, # 0110  z nc
-    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS,0, 0, 0, # 0110  z  c
-    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111 nz nc OUT
-    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111 nz  c
-    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111  z nc
-    CO|MI,  RO|II|CE,   AO|OI,  0,      0,      0, 0, 0, # 0111  z  c
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1000 nz nc JMP
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1000 nz  c
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1000  z nc
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1000  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1001 nz nc JZ
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1001 nz  c
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1001  z nc
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1001  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1010 nz nc JC
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1010 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1010  z nc
-    CO|MI,  RO|II|CE,   IO|CI,  0,      0,      0, 0, 0, # 1010  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1011 nz nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1011 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1011  z nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1011  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1100 nz nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1100 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1100  z nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1100  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1101 nz nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1101 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1101  z nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1101  z  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1110 nz nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1110 nz  c
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1110  z nc
-    CO|MI,  RO|II|CE,   0,      0,      0,      0, 0, 0, # 1110  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0000 nz nc NOP
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0000 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0000  z nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0000  z  c
+    CO|MI,  RO|II|CE,   IO|AI|SR,  0,      0,      0, 0, 0, # 0001 nz nc LDI
+    CO|MI,  RO|II|CE,   IO|AI|SR,  0,      0,      0, 0, 0, # 0001 nz  c
+    CO|MI,  RO|II|CE,   IO|AI|SR,  0,      0,      0, 0, 0, # 0001  z nc
+    CO|MI,  RO|II|CE,   IO|AI|SR,  0,      0,      0, 0, 0, # 0001  z  c
+    CO|MI,  RO|II|CE,   IO|MI,  RO|AI|SR,  0,      0, 0, 0, # 0010 nz nc LDA
+    CO|MI,  RO|II|CE,   IO|MI,  RO|AI|SR,  0,      0, 0, 0, # 0010 nz  c
+    CO|MI,  RO|II|CE,   IO|MI,  RO|AI|SR,  0,      0, 0, 0, # 0010  z nc
+    CO|MI,  RO|II|CE,   IO|MI,  RO|AI|SR,  0,      0, 0, 0, # 0010  z  c
+    CO|MI,  RO|II|CE,   IO|MI,  AO|RI|SR,  0,      0, 0, 0, # 0011 nz nc STA
+    CO|MI,  RO|II|CE,   IO|MI,  AO|RI|SR,  0,      0, 0, 0, # 0011 nz  c
+    CO|MI,  RO|II|CE,   IO|MI,  AO|RI|SR,  0,      0, 0, 0, # 0011  z nc
+    CO|MI,  RO|II|CE,   IO|MI,  AO|RI|SR,  0,      0, 0, 0, # 0011  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0100 nz nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0100 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0100  z nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 0100  z  c
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|SR,  0, 0, 0, # 0101 nz nc ADD
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|SR,  0, 0, 0, # 0101 nz  c
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|SR,  0, 0, 0, # 0101  z nc
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|SR,  0, 0, 0, # 0101  z  c
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS|SR,0, 0, 0, # 0110 nz nc SUB
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS|SR,0, 0, 0, # 0110 nz  c
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS|SR,0, 0, 0, # 0110  z nc
+    CO|MI,  RO|II|CE,   IO|MI,  RO|BI,  SO|AI|AS|SR,0, 0, 0, # 0110  z  c
+    CO|MI,  RO|II|CE,   AO|OI|SR,  0,      0,      0, 0, 0, # 0111 nz nc OUT
+    CO|MI,  RO|II|CE,   AO|OI|SR,  0,      0,      0, 0, 0, # 0111 nz  c
+    CO|MI,  RO|II|CE,   AO|OI|SR,  0,      0,      0, 0, 0, # 0111  z nc
+    CO|MI,  RO|II|CE,   AO|OI|SR,  0,      0,      0, 0, 0, # 0111  z  c
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1000 nz nc JMP
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1000 nz  c
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1000  z nc
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1000  z  c
+    CO|MI,  RO|II|CE,   SR,      0,      0,      0, 0, 0, # 1001 nz nc JZ
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1001 nz  c
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1001  z nc
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1001  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1010 nz nc JC
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1010 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1010  z nc
+    CO|MI,  RO|II|CE,   IO|CI|SR,  0,      0,      0, 0, 0, # 1010  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1011 nz nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1011 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1011  z nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1011  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1100 nz nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1100 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1100  z nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1100  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1101 nz nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1101 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1101  z nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1101  z  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1110 nz nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1110 nz  c
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1110  z nc
+    CO|MI,  RO|II|CE,SR,      0,      0,      0, 0, 0, # 1110  z  c
     CO|MI,  RO|II|CE,   HLT,    0,      0,      0, 0, 0, # 1111 nz nc HLT
     CO|MI,  RO|II|CE,   HLT,    0,      0,      0, 0, 0, # 1111 nz  c
     CO|MI,  RO|II|CE,   HLT,    0,      0,      0, 0, 0, # 1111  z nc
